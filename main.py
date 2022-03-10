@@ -11,7 +11,7 @@ step_number = 100
 chart_size = (4, 2.75)
 
 root = Tk()
-root.title("Deribit API in Python - Cryptarbitrage")
+root.title("Deribit Position Greeks - Cryptarbitrage")
 root.iconbitmap('cryptarbitrage_icon_96px.ico')
 root.minsize(600, 200)
 
