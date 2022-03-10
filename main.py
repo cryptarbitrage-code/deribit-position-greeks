@@ -5,11 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 import black_scholes as bs
-from api_functions import get_positions, get_instrument, get_order_book, get_instruments
-
-# CHANGE THE GREEKS CALCULATIONS TO INCLUDE POSITION SIZES
-# CHANGE THE GREEKS CALCULATIONS TO INCLUDE POSITION SIZES
-# CHANGE THE GREEKS CALCULATIONS TO INCLUDE POSITION SIZES
+from api_functions import get_positions, get_order_book, get_instruments
 
 step_number = 100
 chart_size = (4, 2.75)
@@ -38,8 +34,6 @@ theta_frame.grid(row=1, column=2, padx=2, pady=2)
 
 positions_frame = LabelFrame(root, text="Positions", padx=10, pady=10)
 positions_frame.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
-#positions_frame.grid_rowconfigure(0, weight=1)
-#positions_frame.grid_columnconfigure(0, weight=1)
 
 # Treeview scrollbar
 pos_tree_scroll = Scrollbar(positions_frame)
@@ -322,6 +316,7 @@ def plot_charts(all_deltas, all_gammas, all_vegas, all_thetas, max_calc_date):
 
     plt.show()
 
+
 def calculate_greeks_click():
     # Select the correct currency positions
     position_list = []
@@ -335,7 +330,6 @@ def calculate_greeks_click():
     instrument_list = []
     for position in position_list:
         instrument_list.append(position['instrument_name'])
-    print("instrument list", instrument_list)
     # Call get instruments for all instruments of chosen currency
     all_instruments = get_instruments(selected_currency.get())
     # Pull in order book details from api and add to position list
@@ -360,13 +354,11 @@ def calculate_greeks_click():
             if instrument.get("instrument_name") == current_instrument:
                 position.update(instrument)
 
-    print("position list", position_list)
     # Determine nearest expiry date
     nearest_date_list = []
     for instrument in instrument_details:
         nearest_date_list.append(instrument.get("expiration_timestamp"))
     nearest_date = sorted(nearest_date_list)[0]
-    print("nearest date", nearest_date)
 
     all_deltas, all_gammas, all_vegas, all_thetas, max_calc_date = calculate_greeks(position_list, nearest_date)
 
