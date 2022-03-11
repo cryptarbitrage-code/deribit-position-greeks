@@ -5,4 +5,6 @@ Go to https://github.com/cryptarbitrage-code/deribit-position-greeks for the lat
 
 Follow me on https://twitter.com/cryptarbitrage for other free resources and content.
 
+Deribit ref-link: https://www.deribit.trade (10% discount on trading fees)
+
 <img src="images/1-overview.JPG">
