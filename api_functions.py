@@ -3,10 +3,7 @@ import hmac
 import json
 import time
 import requests
-
-api_client_id = "PKxQBuKM"
-api_client_secret = "Wy6knva2UP2u-kWZS9TtWInYoi11_OJafgeUFuFHCYc"
-api_exchange_address = "https://test.deribit.com"
+from settings import *
 
 
 def get_positions():
