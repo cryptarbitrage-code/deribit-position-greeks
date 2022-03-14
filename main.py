@@ -7,9 +7,11 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationTool
 import black_scholes as bs
 from api_functions import get_positions, get_order_book, get_instruments
 
+# Some chart parameters
 step_number = 100
 chart_size = (4, 2.75)
 
+# tkinter set up
 root = Tk()
 root.title("Deribit Position Greeks - Cryptarbitrage")
 root.iconbitmap('cryptarbitrage_icon_96px.ico')
@@ -31,13 +33,13 @@ vega_frame = LabelFrame(root, text="Vega", padx=2, pady=2)
 vega_frame.grid(row=1, column=1, padx=2, pady=2)
 theta_frame = LabelFrame(root, text="Theta", padx=2, pady=2)
 theta_frame.grid(row=1, column=2, padx=2, pady=2)
-
+# Positions frame
 positions_frame = LabelFrame(root, text="Positions", padx=10, pady=10)
 positions_frame.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
 # Treeview scrollbar
 pos_tree_scroll = Scrollbar(positions_frame)
-# Treeview
+# Treeview, used for the positions table
 pos_tree = ttk.Treeview(positions_frame, selectmode='none', yscrollcommand=pos_tree_scroll.set)
 pos_tree_scroll.config(command=pos_tree.yview, background="#000000")
 pos_tree['columns'] = ("Type", "Instrument", "Size", "Value", "Delta", "Gamma", "Vega", "Theta")
@@ -540,16 +542,4 @@ chart_maxprice_input.grid(row=2, column=1, padx=5, pady=5)
 get_positions_button = Button(details_frame, text="Refresh Positions", command=get_positions_click, padx=2, pady=2)
 get_positions_button.grid(row=3, column=0, sticky="w")
 
-pos_col_heads = [
-    "Type",
-    "Instrument",
-    "Size",
-    "Value",
-    "Delta",
-    "Gamma",
-    "Vega",
-    "Theta",
-]
-
 root.mainloop()
-
