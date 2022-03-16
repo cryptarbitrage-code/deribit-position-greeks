@@ -8,3 +8,19 @@ Follow me on https://twitter.com/cryptarbitrage for other free resources and con
 Deribit ref-link: https://www.deribit.trade (10% discount on trading fees)
 
 <img src="images/1-overview.JPG">
+
+## GUI and Charts
+Tkinter is used for the GUI, and Matplotlib is used to plot the charts.
+
+## Deribit API enpoints
+This program uses the following api endpoints:
+
+get_positions 
+
+get_order_book 
+
+get_instruments
+
+get_instrument (not used but included in api_functions.py)
+
+get_book_summary_by_instrument (not used but included in api_functions.py)
