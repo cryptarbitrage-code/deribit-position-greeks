@@ -7,7 +7,7 @@ Go to https://github.com/cryptarbitrage-code/deribit-position-greeks for the lat
 
 Follow me on https://twitter.com/cryptarbitrage for other free resources and content.
 
-Deribit ref-link: https://www.deribit.trade (10% discount on trading fees)
+Deribit ref-link: https://www.deribit.com/?reg=1332.557&q=home (10% discount on trading fees)
 
 ## GUI and Charts
 Tkinter is used for the GUI, and Matplotlib is used to plot the charts.
